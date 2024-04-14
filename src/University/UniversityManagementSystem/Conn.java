@@ -11,8 +11,8 @@ public class Conn {
         try {Class.forName("com.mysql.cj.jdbc.Driver");
 
         // creating connection string
-        c = DriverManager.getConnection("jdbc:mysql:///universitymanagementsystem","root","Pksharma@1509");
-        // creating ststements
+        c = DriverManager.getConnection("jdbc:mysql:///universitymanagementsystem","root","Rishika@200");
+        // creating statements
         s = c.createStatement();
         
 
