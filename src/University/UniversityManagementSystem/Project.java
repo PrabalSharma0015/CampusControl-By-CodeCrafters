@@ -210,6 +210,8 @@ public class Project extends JFrame implements ActionListener {
             new UpdateTeacher();
         } else if (msg.equals("Update Student Details")) {
             new UpdateStudent();
+        } else if (msg.equals("Enter Marks")) {
+            new EnterMarks();
         }
     
 }

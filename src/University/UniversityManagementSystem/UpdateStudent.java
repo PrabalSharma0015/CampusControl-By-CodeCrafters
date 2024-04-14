@@ -24,7 +24,7 @@ public class UpdateStudent extends JFrame implements ActionListener {
 
         JLabel lblrollnumber = new JLabel("Select Roll Number");
         lblrollnumber.setBounds(50,100,200,20);
-        heading.setFont(new Font("serif", Font.PLAIN, 25));
+        lblrollnumber.setFont(new Font("serif", Font.PLAIN, 25));
         add(lblrollnumber);
 
         crollno = new Choice();
@@ -50,7 +50,6 @@ public class UpdateStudent extends JFrame implements ActionListener {
         JLabel labelname = new JLabel();
         labelname.setBounds(200,150,150,30);
         labelname.setFont(new Font("serif", Font.PLAIN, 18));
-        add(lblname);
         add(labelname);
 
         JLabel lblfname = new JLabel("Father's Name");
