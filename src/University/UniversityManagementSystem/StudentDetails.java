@@ -19,8 +19,8 @@ public class StudentDetails extends JFrame implements ActionListener{
         setTitle("Student Details");
         setResizable(false);
        
-        setSize(900,700);
-        setLocation(300,700);
+        setSize(800,650);
+        setLocation(550,100);
         setLayout(null);
 
         setVisible(true);
