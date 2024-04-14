@@ -194,6 +194,10 @@ public class Project extends JFrame implements ActionListener {
             new AddTeacher();
         } else if (msg.equals("New Student Information")) {
             new AddStudent();
+        } else if (msg.equals("View Faculty Details")) {
+            new TeacherDetails();
+        } else if (msg.equals("View Student Details")) {
+            new StudentDetails();
         }
     
 }
