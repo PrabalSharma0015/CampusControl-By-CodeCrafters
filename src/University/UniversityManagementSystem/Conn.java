@@ -12,7 +12,7 @@ public class Conn {
 
         // creating connection string
         c = DriverManager.getConnection("jdbc:mysql:///universitymanagementsystem","root","Pksharma@1509");
-        // creating ststements
+        // creating statements
         s = c.createStatement();
         
 

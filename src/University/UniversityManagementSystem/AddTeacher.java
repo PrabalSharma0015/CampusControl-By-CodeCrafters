@@ -7,9 +7,9 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.event.*;
 import java.sql.*;
 
-public class AddStudent extends JFrame implements ActionListener {
+public class AddTeacher extends JFrame implements ActionListener {
     JTextField tfname, tffname, tfaddress, tfphone, tfemail, tfx, tfxii, tfaadhar ;
-    JLabel labelrollno;
+    JLabel labelempId;
     JDateChooser dcdob;
     JComboBox cbcourse;
     JComboBox cbbranch;
@@ -18,13 +18,13 @@ public class AddStudent extends JFrame implements ActionListener {
     Random ran = new Random();
     long first4=Math.abs((ran.nextLong() % 9000L)+1000L);
 
-    AddStudent(){
+    AddTeacher(){
 
         setSize(900,700);
         setLocation(350,50);
         setLayout(null);
 
-        JLabel heading = new JLabel("New Student Details");
+        JLabel heading = new JLabel("New Teacher Details");
         heading.setBounds(310,30,500,50);
         heading.setFont(new Font("broadway", Font.BOLD, 30));
         add(heading);
@@ -47,15 +47,15 @@ public class AddStudent extends JFrame implements ActionListener {
         tffname.setBounds(600,150,150,30);
         add(tffname);
 
-        JLabel lblrollno = new JLabel("Roll Number");
-        lblrollno.setBounds(50,200,200,30);
-        lblrollno.setFont(new Font("candara", Font.BOLD, 20));
-        add(lblrollno);
+        JLabel lblempId = new JLabel("Employee Id");
+        lblempId.setBounds(50,200,200,30);
+        lblempId.setFont(new Font("candara", Font.BOLD, 20));
+        add(lblempId);
 
-        labelrollno = new JLabel("24BU"+first4);
-        labelrollno.setBounds(200,200,200,30);
-        labelrollno.setFont(new Font("calibri", Font.BOLD, 20));
-        add(labelrollno);
+        labelempId = new JLabel("101"+first4);
+        labelempId.setBounds(200,200,200,30);
+        labelempId.setFont(new Font("calibri", Font.BOLD, 20));
+        add(labelempId);
 
         JLabel lbldob = new JLabel("Date of Birth");
         lbldob.setBounds(400,200,200,30);
@@ -120,7 +120,7 @@ public class AddStudent extends JFrame implements ActionListener {
         tfaadhar.setBounds(600,350,150,30);
         add(tfaadhar);
 
-        JLabel lblcourse = new JLabel("Course");
+        JLabel lblcourse = new JLabel("Qualification");
         lblcourse.setBounds(50,400,200,30);
         lblcourse.setFont(new Font("candara", Font.BOLD, 20));
         add(lblcourse);
@@ -131,7 +131,7 @@ public class AddStudent extends JFrame implements ActionListener {
         cbcourse.setBackground(Color.WHITE);
         add(cbcourse);
 
-        JLabel lblbranch = new JLabel("Branch");
+        JLabel lblbranch = new JLabel("Department");
         lblbranch.setBounds(400,400,200,30);
         lblbranch.setFont(new Font("candara", Font.BOLD, 20));
         add(lblbranch);
@@ -165,7 +165,7 @@ public class AddStudent extends JFrame implements ActionListener {
         if (ae.getSource()== submit){
             String name=tfname.getText();
             String fname=tffname.getText();
-            String rollno = labelrollno.getText();
+            String rollno = labelempId.getText();
             String dob=((JTextField) dcdob.getDateEditor().getUiComponent()).getText();
             String address=tfaddress.getText();
             String phone=tfphone.getText();
@@ -176,11 +176,11 @@ public class AddStudent extends JFrame implements ActionListener {
             String course=(String) cbcourse.getSelectedItem();
             String branch=(String) cbbranch.getSelectedItem();
         try {
-            String query = "insert into student values('"+name+"','"+fname+"','"+rollno+"','"+dob+"','"+address+"','"+phone+"','"+email+"','"+x+"','"+xii+"','"+aadhar+"','"+course+"','"+branch+"')";
+            String query = "insert into teacher values('"+name+"','"+fname+"','"+rollno+"','"+dob+"','"+address+"','"+phone+"','"+email+"','"+x+"','"+xii+"','"+aadhar+"','"+course+"','"+branch+"')";
             Conn c = new Conn();
             c.s.executeUpdate(query);
 
-            JOptionPane.showMessageDialog(null, "Student Details Inserted Successfully");
+            JOptionPane.showMessageDialog(null, "Teacher Details Inserted Successfully");
             setVisible(false);
         } catch (Exception e){
             e.printStackTrace();
@@ -191,7 +191,7 @@ public class AddStudent extends JFrame implements ActionListener {
     }
 }
 public static void main(String[] args) {
-    new AddStudent();
+    new AddTeacher();
     }
 
 }

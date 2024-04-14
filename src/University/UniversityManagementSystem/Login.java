@@ -75,7 +75,7 @@ public class Login extends JFrame implements ActionListener{
             String password = tfpassword.getText();
             
             // query
-            String query = "select * from login where username='"+username+"' and pass='"+password+"'";
+            String query = "select * from login where username='"+username+"' and password='"+password+"'";
             
             try {
                 Conn c = new Conn();
@@ -83,7 +83,7 @@ public class Login extends JFrame implements ActionListener{
                 
                 if (rs.next()) {
                     setVisible(false);
-                    // new Project();
+                    //new Project();
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid username or password");
                     setVisible(false);
